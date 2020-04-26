@@ -1,4 +1,4 @@
-class IWeather::Forecast
+class IWeather::Weather
 
     @@all = []
 
@@ -10,8 +10,8 @@ class IWeather::Forecast
     # instantiates and saves new Forecast objects
     def self.create_from_api(weather)
         location = "#{weather["location"]["name"]}, #{weather["location"]["region"]}, #{weather["location"]["country"]}"
-        date = forecast_day["date"]
-        time = weather["location"]["localtime"]
+        date = weather["location"]["localtime"].split(" ")[0]
+        time = weather["location"]["localtime"].split(" ")[1]
         temp = weather["current"]["temp_f"]
         wind = weather["current"]["wind_mph"]
         humidity = weather["current"]["humidity"]
