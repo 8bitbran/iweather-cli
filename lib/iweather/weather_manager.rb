@@ -1,4 +1,4 @@
-class IWeather::ForecastManager
+class IWeather::WeatherManager
 
     def call 
     
